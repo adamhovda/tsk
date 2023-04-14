@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.header{
+  background: rgb(255, 255, 255);
+  text-align: left;
+  padding: 20px;
+  border-bottom: solid 1px;
+
+}
+
+.cardHeader {
+  /* width: 50px; */
+  height: 40px;
+}
+
+.subHeader {
+  color: rgb(84, 6, 129);
+  font-size: small;
+
+}
+
+
+input {
+  background-color: rgb(101, 101, 219);;
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 75px;
+}
+
+
+.numpad {
+  width: 100px;
+  padding: 25px;
+  /* margin: 50px; */
+  border-radius: 1%;
+  box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.75);
+
+  
+}
+
+#dropdown-basic {
+  background-color: white;
+}
+
+.numpadP1 {
+  /* background-color:  rgb(119, 119, 119); */
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(153,153,153,1) 100%, rgba(255,254,254,0.8579948738170347) 100%);
+}
+.numpadP2 {
+  background: rgb(249,249,255);
+  background: linear-gradient(180deg, rgba(249,249,255,1) 0%, rgba(236,233,233,1) 100%, rgba(255,254,254,0.8579948738170347) 100%);
+}
+
+.playerScore {
+  font-size:50px;
+}
+
+.playerName {
+  padding: 20px;
+  background: rgb(157, 203, 224);
+}
+
+.nameSubmit {
+  background-color: rgb(157, 203, 224);
+  color: brown;
+}
