@@ -7,9 +7,10 @@ import Scoreboard from './components/Scoreboard';
 
 
 function App() {
-  
+
   const [player1Score, setPlayer1Score] = useState("8000")
   const [player2Score, setPlayer2Score] = useState("8000")
+  const [gameType, setGameType] = useState('custom')
 
 
   return (
@@ -20,12 +21,16 @@ function App() {
                 setPlayer2Score={setPlayer2Score}
                 player1Score={player1Score}
                 player2Score={player2Score}
+                gameType={gameType}
+                setGameType={setGameType}
         />
-        <Scoreboard
+        <Scoreboard screenOptions={{gestureEnabled: false}}
                 setPlayer1Score={setPlayer1Score}
                   setPlayer2Score={setPlayer2Score}
                   player1Score={player1Score}
                   player2Score={player2Score}
+                  gameType={gameType}
+                  setGameType={setGameType}
         />
 
 
