@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-function Scoreboard({player1Score, setPlayer1Score, player2Score, setPlayer2Score}){
+function Scoreboard({player1Score, setPlayer1Score, player2Score, setPlayer2Score,gameType, setGameType}){
 
     const [player1, setPlayer1] = useState("")
     const [player2, setPlayer2] = useState("")
@@ -78,6 +78,8 @@ const handleFormSubmit2 = (event => {
                 player2Score={player2Score}
                 player1={player1}
                 player2={player2}
+                gameType={gameType}
+                setGameType={setGameType}
                 />
             </div>
         </>

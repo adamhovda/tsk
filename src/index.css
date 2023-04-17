@@ -78,6 +78,14 @@ input {
   background: rgb(157, 203, 224);
 }
 
+.playerNameOutput {
+  height: 50px;
+}
+
+.scoreOutput {
+  height: 50px;
+}
+
 .nameSubmit {
   background-color: rgb(157, 203, 224);
   color: brown;

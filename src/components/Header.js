@@ -7,20 +7,25 @@ import pokemonCardHeader from './../pokemoncardback.jpg'
 import { useState } from 'react';
 
 
-function Header({player1Score, setPlayer1Score, player2Score, setPlayer2Score, player1, player2}){
+function Header({player1Score, setPlayer1Score, player2Score, setPlayer2Score, player1, player2, setGameType, gameType}){
+
+    
 
     const [cardHeader, setCardHeader] = useState(genericCardHeader)
+ 
 
     function handleMagicScore() {
         setPlayer1Score(`20`)
         setPlayer2Score(`20`)
         setCardHeader(magicCardHeader)
+        setGameType("magic")
     }
 
     function handleYugiohScore() {
         setPlayer1Score(`8000`)
         setPlayer2Score(`8000`)
         setCardHeader(yugiohCardHeader)
+        setGameType("yugioh")
 
     }
 
@@ -28,12 +33,14 @@ function Header({player1Score, setPlayer1Score, player2Score, setPlayer2Score, p
         setPlayer1Score(`0`)
         setPlayer2Score(`0`)
         setCardHeader(pokemonCardHeader)
+        setGameType("pokemon")
     }
 
     function handleCustomScore(){
         setPlayer1Score(`10000`)
         setPlayer2Score(`10000`)
         setCardHeader(genericCardHeader)
+        setGameType("custom")
     }
 
     return (

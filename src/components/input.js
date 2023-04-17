@@ -4,14 +4,23 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 
-function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, player1, player2}){
+function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, player1, player2, gameType}){
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     const [InputScore, setInputScore] = useState(null)
     const [InputScore2, setInputScore2] = useState(null)
 
+
     function handleNumClick (e) {
+
        if (InputScore === null){
             setInputScore(e.target.value)
        } else if (InputScore.length < 4){
@@ -47,6 +56,9 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
             if (newScore <= 0){
                 setPlayer1Score(newScore)
                 setInputScore( `${player2} Wins!`)
+                handleShow()
+
+
             } else {
             setPlayer1Score(newScore)    
             setInputScore(null)
@@ -72,6 +84,7 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
             if (newScore <= 0){
                 setPlayer2Score(newScore)
                 setInputScore2( `${player1} Wins!`)
+                handleShow()
             } else {
             setPlayer2Score(newScore)    
             setInputScore2(null)
@@ -84,9 +97,43 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
         setInputScore2(null)
     }
 
+    function playAgain(){
+        switch(gameType){
+            case 'yugioh':
+                setPlayer1Score('8000')
+                setPlayer2Score('8000')
+
+        }
+        handleClose();
+
+    }
+
+    // function verifyName(player){
+    //     if (player === null) {
+    //         <h1>Enter players name</h1>
+    //     } else {
+    //         <h1>{player}</h1>
+    //     }
+    // }
+
 
     return(
         <>
+
+    <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Congrats!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{InputScore}{InputScore2}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={playAgain}>
+            Play Again
+          </Button>
+        </Modal.Footer>
+    </Modal>
             {/* <h1>Input 1</h1>
             <h2>{InputScore}</h2>
             <div>
@@ -107,8 +154,9 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
 
     <Carousel interval={null} indicators={false}>
       <Carousel.Item>
-      <h1>{player1}</h1>
-            <h2>{InputScore}</h2>
+      <h1 className='playerNameOutput'>{player1}</h1>
+
+            <h2 className='scoreOutput'>{InputScore}</h2>
             <Container className='numpad numpadP1'>
                 <Row>
                     <Col><Button className='w-100 mb-2 pt-3 pb-3' variant='light' name='nine' value={9} onClick={handleNumClick}>9</Button></Col>
@@ -143,8 +191,8 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
         </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item>
-      <h1>{player2}</h1>
-            <h2>{InputScore2}</h2>
+      <h1 className='playerNameOutput'>{player2}</h1>
+            <h2 className='scoreOutput'>{InputScore2}</h2>
             {/* <div>
 
                 <button name='nine' value={9} onClick={handleNumClick2}>9</button>
