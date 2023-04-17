@@ -102,9 +102,23 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
             case 'yugioh':
                 setPlayer1Score('8000')
                 setPlayer2Score('8000')
+                break;
+            case 'magic':
+                setPlayer1Score('20')
+                setPlayer2Score('20')
+                break;
+            case 'pokemon':
+                setPlayer1Score('0')
+                setPlayer2Score('0')
+                break;
+            default:   
+            setPlayer1Score('10000')
+            setPlayer2Score('10000')
 
         }
         handleClose();
+        setInputScore(null)
+        setInputScore2(null)
 
     }
 
@@ -154,7 +168,7 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
 
     <Carousel interval={null} indicators={false}>
       <Carousel.Item>
-      <h1 className='playerNameOutput'>{player1}</h1>
+      <h1 className='playerNameOutput'>{player1}'s Turn</h1>
 
             <h2 className='scoreOutput'>{InputScore}</h2>
             <Container className='numpad numpadP1'>
@@ -191,7 +205,7 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
         </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item>
-      <h1 className='playerNameOutput'>{player2}</h1>
+      <h1 className='playerNameOutput'>{player2}'s Turn</h1>
             <h2 className='scoreOutput'>{InputScore2}</h2>
             {/* <div>
 
@@ -241,6 +255,7 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
       </Carousel.Item>
 
     </Carousel>
+    <h5>swipe to switch turns</h5>
         </>
     )
 }
