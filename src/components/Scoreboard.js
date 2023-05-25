@@ -53,15 +53,15 @@ const handleFormSubmit2 = (event => {
                     <Row>
                         <Col>
                             <form className='playerName' onSubmit={handleFormSubmit}>
-                            <input name='player1' id='player1' value={player1} placeholder='Player 1' onChange={(e) => setPlayer1(e.target.value)}></input>
-                            <Button className='nameSubmit' type='submit' id='submit1'>OK</Button>
+                            <input className='nameInput' name='player1' id='player1' value={player1} placeholder='Player 1' onChange={(e) => setPlayer1(e.target.value)}></input>
+                            <Button variant="outline-dark" className='nameSubmit' type='submit' id='submit1'>OK</Button>
                             </form>
                             <h2 className='playerScore'>{player1Score}</h2>
                         </Col>
                         <Col>
                             <form className='playerName' onSubmit={handleFormSubmit2}>
                             <input name='player2' id='player2' value={player2} placeholder='Player 2' onChange={(e) => setPlayer2(e.target.value)}></input>
-                            <Button className='nameSubmit' type='submit' id='submit2'>OK</Button>
+                            <Button variant="outline-dark" className='nameSubmit' type='submit' id='submit2'>OK</Button>
                             </form>
                             <h2 className='playerScore'>{player2Score}</h2>
                         </Col>

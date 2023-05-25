@@ -1,6 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
+import './index.css';
 import React, {useState} from 'react';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';

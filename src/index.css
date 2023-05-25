@@ -57,6 +57,7 @@ input {
 
 #dropdown-basic {
   background-color: white;
+  float:right
 }
 
 .numpadP1 {
@@ -75,7 +76,7 @@ input {
 
 .playerName {
   padding: 20px;
-  background: rgb(157, 203, 224);
+  /* background: rgb(157, 203, 224); */
 }
 
 .playerNameOutput {
@@ -86,7 +87,14 @@ input {
   height: 50px;
 }
 
-.nameSubmit {
-  background-color: rgb(157, 203, 224);
-  color: brown;
+Button {
+  padding: 10px;
 }
+
+input, textarea {
+  background-color: none;
+}
+/* .nameInput:focus {
+  background: rgb(157, 203, 224);
+
+} */

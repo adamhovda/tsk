@@ -168,7 +168,7 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
 
     <Carousel interval={null} indicators={false}>
       <Carousel.Item>
-      <h1 className='playerNameOutput'>{player1}'s Turn</h1>
+      <h1 className='playerNameOutput'>{player1}</h1>
 
             <h2 className='scoreOutput'>{InputScore}</h2>
             <Container className='numpad numpadP1'>
@@ -204,8 +204,8 @@ function Input({player1Score, setPlayer1Score, player2Score, setPlayer2Score, pl
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption> */}
       </Carousel.Item>
-      <Carousel.Item>
-      <h1 className='playerNameOutput'>{player2}'s Turn</h1>
+      <Carousel.Item >
+      <h1 className='playerNameOutput'>{player2}</h1>
             <h2 className='scoreOutput'>{InputScore2}</h2>
             {/* <div>
 
